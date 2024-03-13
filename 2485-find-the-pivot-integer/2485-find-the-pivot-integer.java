@@ -1,12 +1,12 @@
 class Solution {
     public int pivotInteger(int n) {
-
-        for(int i = 1; i <= n; i++){
-            if((i * (i + 1) / 2) == ((i+n) * (n-i+1) / 2)){
-                return i;
-            }
-            
+        
+        double x = (double) Math.sqrt(n * (n + 1) / 2);
+        
+        if(x % 1 != 0){
+            return -1;
+        } else{
+            return (int)x;
         }
-        return -1;
     }
 }
